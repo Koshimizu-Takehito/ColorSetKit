@@ -2,6 +2,6 @@
 <Workspace
    version = "1.0">
    <FileRef
-      location = "self:ColorSet.xcodeproj">
+      location = "self:/Users/takehitokoshimizu/Documents/project/ColorSet/ColorSetKit.xcodeproj">
    </FileRef>
 </Workspace>
