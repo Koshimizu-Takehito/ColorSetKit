@@ -21,7 +21,7 @@ public extension ColorSets {
         self.init(name: name, colorSets: colorSets)
     }
 
-    public static func ofCurrentDir() -> ColorSets {
+    public static func underCurrentDirectory() -> ColorSets {
         return ColorSets(name: FileInfo.productName, paths: FileInfo.colorsetPaths)
     }
 }
@@ -34,7 +34,7 @@ import AppKit
 public extension ColorSets {
 
     /// save the color list to user's ~/Library/Colors directory.
-    public func saveToUsersLibraryColors() {
+    public func save() {
         try? nsColorList.write(to: nil)
     }
 

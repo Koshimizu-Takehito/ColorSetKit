@@ -5,10 +5,12 @@
 //  Created by Takehito Koshimizu on 2019/02/10.
 //
 
-public enum FileInfo {
+public struct FileInfo {
+
+    private init() {}
 
     public static var colorsetPaths: [String] {
-        return Command.findColorSets.readLine
+        return Command.findColorSets.lines
     }
 
     public static var productName: String {
@@ -18,7 +20,7 @@ public enum FileInfo {
     }
 
     private static var workspaceName: String? {
-        return Command.findWorkspace.readLine
+        return Command.findWorkspace.lines
             .first { !$0.isEmpty }?
             .split(separator: "/").last?
             .split(separator: ".").first
@@ -27,7 +29,7 @@ public enum FileInfo {
     }
 
     private static var projectName: String? {
-        return Command.findProject.readLine
+        return Command.findProject.lines
             .first { !$0.isEmpty }?
             .split(separator: "/").last?
             .split(separator: ".")
@@ -36,7 +38,7 @@ public enum FileInfo {
     }
 
     private static var workingDirectoryName: String? {
-        return Command.pwd.readLine
+        return Command.pwd.lines
             .first { !$0.isEmpty }?
             .split(separator: "/").last
             .map(String.init)

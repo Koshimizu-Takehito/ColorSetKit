@@ -15,12 +15,13 @@ public struct Command: Hashable {
         self.command = command
     }
 
-    public var readLine: [String] {
+    public var lines: [String] {
+        return text.split(separator: "\n").map(String.init)
+    }
+
+    public var text: String {
         let stdOut = readStdOut()
-        let text = String(data: stdOut, encoding: .utf8)
-        return (text?.split(separator: "\n"))
-            .safelyUnwrapped
-            .map(String.init)
+        return String(data: stdOut, encoding: .utf8) ?? ""
     }
 
     public func readStdOut() -> Data {

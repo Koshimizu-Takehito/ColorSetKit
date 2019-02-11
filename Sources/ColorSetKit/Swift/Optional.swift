@@ -7,7 +7,7 @@
 
 extension Optional where Wrapped: Sequence {
 
-    public var safelyUnwrapped: [Wrapped.Element] {
+    var safelyUnwrapped: [Wrapped.Element] {
         switch self {
         case .none:
             return []
