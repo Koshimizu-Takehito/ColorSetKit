@@ -5,8 +5,6 @@
 //  Created by Takehito Koshimizu on 2019/02/09.
 //
 
-import AppKit
-
 enum ColorSpace: String, Codable, Hashable {
 
     case srgb = "srgb"
@@ -17,6 +15,10 @@ enum ColorSpace: String, Codable, Hashable {
     case extendedGray = "extended-gray"
 }
 
+#if canImport(AppKit)
+import AppKit
+
+@available(macOS, introduced:10.12)
 extension ColorSpace {
 
     public var colorSpace: NSColorSpace {
@@ -39,3 +41,5 @@ extension ColorSpace {
         }
     }
 }
+
+#endif

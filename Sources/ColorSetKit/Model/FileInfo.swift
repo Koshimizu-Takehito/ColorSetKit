@@ -5,8 +5,6 @@
 //  Created by Takehito Koshimizu on 2019/02/10.
 //
 
-import Foundation
-
 public enum FileInfo {
 
     public static var colorsetPaths: [String] {

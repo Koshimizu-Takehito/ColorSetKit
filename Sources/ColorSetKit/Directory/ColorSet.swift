@@ -5,7 +5,7 @@
 //  Created by Takehito Koshimizu on 2019/02/09.
 //
 
-import AppKit
+import Foundation
 
 public struct ColorSet: Hashable {
     let path: URL

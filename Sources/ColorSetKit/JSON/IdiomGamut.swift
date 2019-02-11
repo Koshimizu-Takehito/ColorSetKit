@@ -5,8 +5,6 @@
 //  Created by Takehito Koshimizu on 2019/02/09.
 //
 
-import AppKit
-
 struct IdiomGamut: Codable, Hashable {
     let color: Color
     let idiom: Idiom
@@ -20,6 +18,10 @@ struct IdiomGamut: Codable, Hashable {
     }
 }
 
+#if canImport(AppKit)
+import AppKit
+
+@available(macOS, introduced:10.12)
 extension IdiomGamut {
 
     var pair: (color: NSColor, info: [String]) {
@@ -28,3 +30,5 @@ extension IdiomGamut {
         return (color.nsColor, info.compactMap { $0 })
     }
 }
+
+#endif

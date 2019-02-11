@@ -5,8 +5,6 @@
 //  Created by Takehito Koshimizu on 2019/02/09.
 //
 
-import CoreGraphics
-
 struct Components: Codable, Hashable {
 
     let red: String?
@@ -15,6 +13,9 @@ struct Components: Codable, Hashable {
     let white: String?
     let alpha: String
 }
+
+#if canImport(CoreGraphics)
+import CoreGraphics
 
 extension Components {
 
@@ -56,3 +57,5 @@ private extension Components {
         return CGFloat(int) / 255
     }
 }
+
+#endif

@@ -5,8 +5,6 @@
 //  Created by Takehito Koshimizu on 2019/02/09.
 //
 
-import AppKit
-
 struct Color: Codable, Hashable {
 
     let colorSpace: ColorSpace
@@ -18,6 +16,10 @@ struct Color: Codable, Hashable {
     }
 }
 
+#if canImport(AppKit)
+import AppKit
+
+@available(macOS, introduced:10.12)
 extension Color {
 
     var nsColor: NSColor {
@@ -27,3 +29,5 @@ extension Color {
                        count: components.count)
     }
 }
+
+#endif
