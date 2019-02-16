@@ -5,17 +5,50 @@
 //  Created by Takehito Koshimizu on 2019/02/09.
 //
 
-struct Components: Codable, Hashable {
+enum Components: Codable, Hashable {
 
-    let red: String?
+    case rgb(red: String, green: String, blue: String, alpha: String)
 
-    let green: String?
+    case grayscale(white: String, alpha: String)
 
-    let blue: String?
+    enum CodingKeys: String, CodingKey {
+        case red
+        case green
+        case blue
+        case white
+        case alpha
+    }
 
-    let white: String?
+    init(from decoder: Decoder) throws {
+        let container = try decoder.container(keyedBy: CodingKeys.self)
+        let alpha = try container.decode(String.self, forKey: .alpha)
 
-    let alpha: String
+        if let white = try container.decodeIfPresent(String.self, forKey: .white) {
+            self = .grayscale(
+                white: white,
+                alpha: alpha)
+        } else {
+            try self = .rgb(
+                red: container.decode(String.self, forKey: .red),
+                green: container.decode(String.self, forKey: .green),
+                blue: container.decode(String.self, forKey: .blue),
+                alpha: alpha)
+        }
+    }
+
+    func encode(to encoder: Encoder) throws {
+        var container = encoder.container(keyedBy: CodingKeys.self)
+        switch self {
+        case .rgb(let red, let green, let blue, let alpha):
+            try container.encode(red, forKey: .red)
+            try container.encode(green, forKey: .green)
+            try container.encode(blue, forKey: .blue)
+            try container.encode(alpha, forKey: .alpha)
+        case .grayscale(let white, let alpha):
+            try container.encode(white, forKey: .white)
+            try container.encode(alpha, forKey: .alpha)
+        }
+    }
 
 }
 
@@ -25,7 +58,7 @@ import CoreGraphics
 extension Components {
 
     var colorComponents: [CGFloat] {
-        return components.compactMap(toCGFloat)
+        return components.compactMap(Components.toCGFloat)
     }
 
 }
@@ -33,17 +66,15 @@ extension Components {
 private extension Components {
 
     var components: [String] {
-        switch (red, green, blue, white) {
-        case (_, _, _, let white?):
-            return [white, alpha]
-        case (let red?, let green?, let blue?, _):
+        switch self {
+        case .rgb(let red, let green, let blue, let alpha):
             return [red, green, blue, alpha]
-        default:
-            return []
+        case .grayscale(let white, let alpha):
+            return [white, alpha]
         }
     }
 
-    private func toCGFloat(_ string: String) -> CGFloat? {
+    private static func toCGFloat(_ string: String) -> CGFloat? {
         switch string {
         case _ where string.hasPrefix("0x"):
             return hexToCGFloat(string)
@@ -54,12 +85,12 @@ private extension Components {
         }
     }
 
-    private func hexToCGFloat(_ hex: String) -> CGFloat? {
+    private static func hexToCGFloat(_ hex: String) -> CGFloat? {
         let hex = hex.suffix(from: hex.index(hex.startIndex, offsetBy: "0x".count))
         return Int(hex, radix: 16).map(intToCGFloat)
     }
 
-    private func intToCGFloat(_ int: Int) -> CGFloat {
+    private static func intToCGFloat(_ int: Int) -> CGFloat {
         return CGFloat(int) / 255
     }
 
