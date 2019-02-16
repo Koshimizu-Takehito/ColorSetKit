@@ -16,7 +16,7 @@ public struct FileInfo {
     public static var productName: String {
         return workspaceName
             ?? projectName
-            ?? workingDirectoryName!
+            ?? directoryName!
     }
 
     private static var workspaceName: String? {
@@ -37,10 +37,7 @@ public struct FileInfo {
             .map(String.init)
     }
 
-    private static var workingDirectoryName: String? {
-        return Command.pwd.lines
-            .first { !$0.isEmpty }?
-            .split(separator: "/").last
-            .map(String.init)
+    private static var directoryName: String? {
+        return Command.pwd.text
     }
 }
