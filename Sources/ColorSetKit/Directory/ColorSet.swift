@@ -7,7 +7,7 @@
 
 import Foundation
 
-public struct ColorSet: Hashable {
+struct ColorSet: Hashable {
 
     let path: URL
 
@@ -21,7 +21,7 @@ public struct ColorSet: Hashable {
 
 extension ColorSet {
 
-    public init?(path: String) {
+    init?(path: String) {
         let path = URL(fileURLWithPath: path)
         let fileUrl = ColorSet.fileUrl(from: path)
         guard let name = ColorSet.name(from: path) else { return nil }

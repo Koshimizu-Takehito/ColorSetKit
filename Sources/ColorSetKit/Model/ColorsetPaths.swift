@@ -5,17 +5,15 @@
 //  Created by Takehito Koshimizu on 2019/02/16.
 //
 
-public struct ColorsetPaths {
+struct ColorsetPaths {
 
-    public let colorsetPaths: [String]
-
+    let colorsetPaths: [String]
 }
 
 extension ColorsetPaths {
 
-    public static func currentDir() -> ColorsetPaths {
+    static func currentDir() -> ColorsetPaths {
         return ColorsetPaths(
             colorsetPaths: Command.findColorSets.lines)
     }
-
 }

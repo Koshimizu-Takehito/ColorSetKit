@@ -12,7 +12,6 @@ public struct ColorSets: Hashable {
     private let name: String
 
     private let colorSets: [ColorSet]
-
 }
 
 // MARK: - Instanciate
@@ -29,7 +28,6 @@ public extension ColorSets {
             name: FileInfo.currentDir().outputName,
             paths: ColorsetPaths.currentDir().colorsetPaths)
     }
-
 }
 
 #if canImport(AppKit)
@@ -55,7 +53,7 @@ public extension ColorSets {
 @available(macOS, introduced:10.12)
 extension ColorSet {
 
-    public var colors: [(color: NSColor, key: String)] {
+    var colors: [(color: NSColor, key: String)] {
         return contents.pairs.map { pair in
             return (
                 color: pair.color,
@@ -73,7 +71,6 @@ extension Collection where Element==ColorSet {
     var colors: [(color: NSColor, key: String)] {
         return lazy.flatMap { $0.colors }
     }
-    
 }
 
 #endif

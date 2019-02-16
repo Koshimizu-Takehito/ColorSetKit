@@ -5,28 +5,26 @@
 //  Created by Takehito Koshimizu on 2019/02/10.
 //
 
-public struct FileInfo {
+struct FileInfo {
 
-    public let outputName: String
+    let outputName: String
 
-    public let workspaceName: String?
+    let workspaceName: String?
 
-    public let projectName: String?
+    let projectName: String?
 
-    public let directoryName: String?
-
+    let directoryName: String?
 }
 
 extension FileInfo {
 
-    public static func currentDir() -> FileInfo {
+    static func currentDir() -> FileInfo {
         return FileInfo(
             outputName: outputName,
             workspaceName: workspaceName,
             projectName: projectName,
             directoryName: directoryName)
     }
-
 }
 
 extension FileInfo {
