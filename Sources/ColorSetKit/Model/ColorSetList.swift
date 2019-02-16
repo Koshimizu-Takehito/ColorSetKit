@@ -15,7 +15,6 @@ public struct ColorSets: Hashable {
 }
 
 // MARK: - Instanciate
-@available(macOS, introduced:10.12)
 public extension ColorSets {
 
     public init(name: String, paths: [String]) {
