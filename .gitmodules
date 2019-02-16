@@ -1,0 +1,3 @@
+[submodule "ShellKit"]
+	path = ShellKit
+	url = git@github.com:Koshimizu-Takehito/ShellKit.git
