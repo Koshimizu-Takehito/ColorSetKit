@@ -4,4 +4,7 @@
    <FileRef
       location = "group:ColorSetKit.xcodeproj">
    </FileRef>
+   <FileRef
+      location = "group:ShellKit/ShellKit.xcodeproj">
+   </FileRef>
 </Workspace>
