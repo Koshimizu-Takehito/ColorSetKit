@@ -8,10 +8,15 @@
 struct Components: Codable, Hashable {
 
     let red: String?
+
     let green: String?
+
     let blue: String?
+
     let white: String?
+
     let alpha: String
+
 }
 
 #if canImport(CoreGraphics)
@@ -22,6 +27,7 @@ extension Components {
     var colorComponents: [CGFloat] {
         return components.compactMap(toCGFloat)
     }
+
 }
 
 private extension Components {
@@ -56,6 +62,7 @@ private extension Components {
     private func intToCGFloat(_ int: Int) -> CGFloat {
         return CGFloat(int) / 255
     }
+
 }
 
 #endif

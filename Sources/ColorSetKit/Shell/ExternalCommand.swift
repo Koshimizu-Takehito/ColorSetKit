@@ -7,6 +7,7 @@
 
 import Foundation
 
+// FIXME: testable
 public extension Command {
 
     public static var pwd: Command {
@@ -24,4 +25,5 @@ public extension Command {
     public static var findProject: Command {
         return "find `pwd` -maxdepth 1 -name *.xcodeproj"
     }
+
 }

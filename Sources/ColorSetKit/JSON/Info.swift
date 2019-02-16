@@ -6,6 +6,9 @@
 //
 
 struct Info: Codable, Hashable {
+
     let version: Int
+
     let author: String
+
 }

@@ -6,10 +6,17 @@
 //
 
 enum Idiom: String, Codable, Hashable {
+
     case universal
+
     case iphone
+
     case ipad
+
     case watch
+
     case tv
+
     case mac
+
 }

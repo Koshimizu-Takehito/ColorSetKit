@@ -8,10 +8,15 @@
 import Foundation
 
 public struct ColorSet: Hashable {
+
     let path: URL
+
     let name: String
+
     let fileUrl: URL
+
     let contents: Contents
+
 }
 
 extension ColorSet {
@@ -43,4 +48,5 @@ extension ColorSet {
         temp.appendPathExtension("json")
         return temp
     }
+
 }

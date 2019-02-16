@@ -6,7 +6,11 @@
 //
 
 enum Value: String, Codable, Hashable {
+
     case dark = "dark"
+
     case high = "high"
+
     case light = "light"
+
 }

@@ -6,6 +6,8 @@
 //
 
 enum Appearance: String, Codable, Hashable {
+
     case contrast = "contrast"
+
     case luminosity = "luminosity"
 }

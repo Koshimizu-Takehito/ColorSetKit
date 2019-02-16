@@ -6,16 +6,24 @@
 //
 
 struct IdiomGamut: Codable, Hashable {
+
     let color: Color
+
     let idiom: Idiom
+
     let displayGamut: DisplayGamut?
+
     let appearances: [AppearanceValue]?
 
     enum CodingKeys: String, CodingKey {
+
         case idiom, color
+
         case displayGamut = "display-gamut"
+
         case appearances
     }
+
 }
 
 #if canImport(AppKit)
@@ -25,7 +33,9 @@ import AppKit
 extension IdiomGamut {
 
     var pair: (color: NSColor, info: [String]) {
+        // FIXME: append appearance
         var info: [String?] = appearances?.map { $0.value.rawValue } ?? []
+        // FIXME: append idiom
         info.append(displayGamut?.rawValue)
         return (color.nsColor, info.compactMap { $0 })
     }

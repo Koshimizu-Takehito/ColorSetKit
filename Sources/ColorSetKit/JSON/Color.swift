@@ -8,12 +8,14 @@
 struct Color: Codable, Hashable {
 
     let colorSpace: ColorSpace
+
     let components: Components
 
     enum CodingKeys: String, CodingKey {
         case colorSpace = "color-space"
         case components
     }
+
 }
 
 #if canImport(AppKit)
@@ -28,6 +30,7 @@ extension Color {
                        components: components,
                        count: components.count)
     }
+    
 }
 
 #endif

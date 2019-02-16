@@ -24,6 +24,7 @@ public extension ColorSets {
     public static func underCurrentDirectory() -> ColorSets {
         return ColorSets(name: FileInfo.productName, paths: FileInfo.colorsetPaths)
     }
+
 }
 
 #if canImport(AppKit)
@@ -67,6 +68,7 @@ extension Collection where Element==ColorSet {
     var colors: [(color: NSColor, key: String)] {
         return lazy.flatMap { $0.colors }
     }
+    
 }
 
 #endif

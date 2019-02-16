@@ -21,7 +21,7 @@ public struct Command: Hashable {
 
     public var text: String {
         let stdOut = readStdOut()
-        return String(data: stdOut, encoding: .utf8) ?? ""
+        return String(data: stdOut, encoding: .utf8)!
     }
 
     public func readStdOut() -> Data {
@@ -32,6 +32,7 @@ public struct Command: Hashable {
         process.launch()
         return pipe.fileHandleForReading.readDataToEndOfFile()
     }
+
 }
 
 extension Command: ExpressibleByStringLiteral {
@@ -47,4 +48,5 @@ extension Command: ExpressibleByStringLiteral {
     public init(stringLiteral value: String) {
         self.init(command: value)
     }
+
 }

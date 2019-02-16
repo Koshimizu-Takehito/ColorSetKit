@@ -6,6 +6,8 @@
 //
 
 struct AppearanceValue: Codable, Hashable {
+
     let appearance: Appearance
+
     let value: Value
 }

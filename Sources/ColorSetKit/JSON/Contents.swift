@@ -6,7 +6,9 @@
 //
 
 struct Contents: Codable, Hashable {
+
     let info: Info
+
     let colors: [IdiomGamut]
 }
 
@@ -19,6 +21,7 @@ extension Contents {
     var pairs: [(color: NSColor, info: [String])] {
         return colors.map { $0.pair }
     }
+
 }
 
 #endif

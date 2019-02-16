@@ -15,5 +15,5 @@ extension Optional where Wrapped: Sequence {
             return Array(wrapped)
         }
     }
-}
 
+}

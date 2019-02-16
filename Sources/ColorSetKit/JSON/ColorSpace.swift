@@ -8,11 +8,17 @@
 enum ColorSpace: String, Codable, Hashable {
 
     case srgb = "srgb"
+
     case extendedLinearSrgb = "extended-linear-srgb"
+
     case extendedSrgb = "extended-srgb"
+
     case displayP3 = "display-p3"
+
     case grayGamma22 = "gray-gamma-22"
+
     case extendedGray = "extended-gray"
+
 }
 
 #if canImport(AppKit)
@@ -40,6 +46,7 @@ extension ColorSpace {
             return .extendedGenericGamma22Gray
         }
     }
+
 }
 
 #endif

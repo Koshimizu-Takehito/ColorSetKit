@@ -6,6 +6,9 @@
 //
 
 enum DisplayGamut: String, Codable, Hashable {
+
     case displayP3 = "display-P3"
+
     case sRGB = "sRGB"
+
 }
