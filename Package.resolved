@@ -1,0 +1,16 @@
+{
+  "object": {
+    "pins": [
+      {
+        "package": "ShellKit",
+        "repositoryURL": "https://github.com/Koshimizu-Takehito/ShellKit.git",
+        "state": {
+          "branch": null,
+          "revision": "020fc3b8df8acb92b4267bf12c40dfc656dd58d4",
+          "version": "0.9.0"
+        }
+      }
+    ]
+  },
+  "version": 1
+}

@@ -38,7 +38,7 @@ import AppKit
 public extension ColorSets {
 
     /// save the color list to user's \"~/Library/Colors\" directory.
-    public func save() {
+    public func write() {
         try? nsColorList.write(to: nil)
     }
 

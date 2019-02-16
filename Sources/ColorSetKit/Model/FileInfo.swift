@@ -5,6 +5,8 @@
 //  Created by Takehito Koshimizu on 2019/02/10.
 //
 
+import ShellKit
+
 struct FileInfo {
 
     let outputName: String
@@ -26,6 +28,8 @@ extension FileInfo {
             directoryName: directoryName)
     }
 }
+
+#if canImport(ShellKit)
 
 extension FileInfo {
 
@@ -57,3 +61,5 @@ extension FileInfo {
         return Command.pwd.text
     }
 }
+
+#endif

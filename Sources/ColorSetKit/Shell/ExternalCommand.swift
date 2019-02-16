@@ -5,7 +5,7 @@
 //  Created by Takehito Koshimizu on 2019/02/10.
 //
 
-import Foundation
+import ShellKit
 
 // FIXME: testable
 extension Command {

@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		AB10686922115169001E8C63 /* Command.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB10685422115169001E8C63 /* Command.swift */; };
 		AB10686A22115169001E8C63 /* ExternalCommand.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB10685522115169001E8C63 /* ExternalCommand.swift */; };
 		AB10686B22115169001E8C63 /* ColorSet.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB10685722115169001E8C63 /* ColorSet.swift */; };
 		AB10686C22115169001E8C63 /* AppearanceValue.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB10685922115169001E8C63 /* AppearanceValue.swift */; };
@@ -25,6 +24,7 @@
 		AB10687822115169001E8C63 /* FileInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB10686722115169001E8C63 /* FileInfo.swift */; };
 		AB10687922115169001E8C63 /* ColorSetList.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB10686822115169001E8C63 /* ColorSetList.swift */; };
 		AB27122F2217CD0300AA10FD /* ColorsetPaths.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB27122E2217CD0300AA10FD /* ColorsetPaths.swift */; };
+		AB27124A2217D68E00AA10FD /* libShellKit.a in Frameworks */ = {isa = PBXBuildFile; fileRef = AB2712492217D68E00AA10FD /* libShellKit.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -40,7 +40,6 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		AB10685422115169001E8C63 /* Command.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Command.swift; sourceTree = "<group>"; };
 		AB10685522115169001E8C63 /* ExternalCommand.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExternalCommand.swift; sourceTree = "<group>"; };
 		AB10685722115169001E8C63 /* ColorSet.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ColorSet.swift; sourceTree = "<group>"; };
 		AB10685922115169001E8C63 /* AppearanceValue.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppearanceValue.swift; sourceTree = "<group>"; };
@@ -58,6 +57,7 @@
 		AB10686722115169001E8C63 /* FileInfo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FileInfo.swift; sourceTree = "<group>"; };
 		AB10686822115169001E8C63 /* ColorSetList.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ColorSetList.swift; sourceTree = "<group>"; };
 		AB27122E2217CD0300AA10FD /* ColorsetPaths.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorsetPaths.swift; sourceTree = "<group>"; };
+		AB2712492217D68E00AA10FD /* libShellKit.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; path = libShellKit.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		AB850919220EAEF500D54F13 /* libColorSetKit.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libColorSetKit.a; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -66,6 +66,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AB27124A2217D68E00AA10FD /* libShellKit.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -95,7 +96,6 @@
 		AB10685322115169001E8C63 /* Shell */ = {
 			isa = PBXGroup;
 			children = (
-				AB10685422115169001E8C63 /* Command.swift */,
 				AB10685522115169001E8C63 /* ExternalCommand.swift */,
 			);
 			path = Shell;
@@ -145,9 +145,18 @@
 			path = Model;
 			sourceTree = "<group>";
 		};
+		AB2712482217D68E00AA10FD /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				AB2712492217D68E00AA10FD /* libShellKit.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		AB850910220EAEF500D54F13 = {
 			isa = PBXGroup;
 			children = (
+				AB2712482217D68E00AA10FD /* Frameworks */,
 				AB85091A220EAEF500D54F13 /* Products */,
 				AB10685122115169001E8C63 /* Sources */,
 			);
@@ -224,7 +233,6 @@
 				AB10687922115169001E8C63 /* ColorSetList.swift in Sources */,
 				AB27122F2217CD0300AA10FD /* ColorsetPaths.swift in Sources */,
 				AB10686F22115169001E8C63 /* ColorSpace.swift in Sources */,
-				AB10686922115169001E8C63 /* Command.swift in Sources */,
 				AB10687422115169001E8C63 /* Components.swift in Sources */,
 				AB10687122115169001E8C63 /* Contents.swift in Sources */,
 				AB10687222115169001E8C63 /* DisplayGamut.swift in Sources */,
