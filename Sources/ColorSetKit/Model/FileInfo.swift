@@ -7,13 +7,31 @@
 
 public struct FileInfo {
 
-    private init() {}
+    public let outputName: String
 
-    public static var colorsetPaths: [String] {
-        return Command.findColorSets.lines
+    public let workspaceName: String?
+
+    public let projectName: String?
+
+    public let directoryName: String?
+
+}
+
+extension FileInfo {
+
+    public static func currentDir() -> FileInfo {
+        return FileInfo(
+            outputName: outputName,
+            workspaceName: workspaceName,
+            projectName: projectName,
+            directoryName: directoryName)
     }
 
-    public static var productName: String {
+}
+
+extension FileInfo {
+
+    private static var outputName: String {
         return workspaceName
             ?? projectName
             ?? directoryName!

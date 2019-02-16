@@ -24,6 +24,7 @@
 		AB10687722115169001E8C63 /* Optional.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB10686522115169001E8C63 /* Optional.swift */; };
 		AB10687822115169001E8C63 /* FileInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB10686722115169001E8C63 /* FileInfo.swift */; };
 		AB10687922115169001E8C63 /* ColorSetList.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB10686822115169001E8C63 /* ColorSetList.swift */; };
+		AB27122F2217CD0300AA10FD /* ColorsetPaths.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB27122E2217CD0300AA10FD /* ColorsetPaths.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -56,6 +57,7 @@
 		AB10686522115169001E8C63 /* Optional.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Optional.swift; sourceTree = "<group>"; };
 		AB10686722115169001E8C63 /* FileInfo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FileInfo.swift; sourceTree = "<group>"; };
 		AB10686822115169001E8C63 /* ColorSetList.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ColorSetList.swift; sourceTree = "<group>"; };
+		AB27122E2217CD0300AA10FD /* ColorsetPaths.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorsetPaths.swift; sourceTree = "<group>"; };
 		AB850919220EAEF500D54F13 /* libColorSetKit.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libColorSetKit.a; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -137,6 +139,7 @@
 			isa = PBXGroup;
 			children = (
 				AB10686822115169001E8C63 /* ColorSetList.swift */,
+				AB27122E2217CD0300AA10FD /* ColorsetPaths.swift */,
 				AB10686722115169001E8C63 /* FileInfo.swift */,
 			);
 			path = Model;
@@ -219,6 +222,7 @@
 				AB10687522115169001E8C63 /* Color.swift in Sources */,
 				AB10686B22115169001E8C63 /* ColorSet.swift in Sources */,
 				AB10687922115169001E8C63 /* ColorSetList.swift in Sources */,
+				AB27122F2217CD0300AA10FD /* ColorsetPaths.swift in Sources */,
 				AB10686F22115169001E8C63 /* ColorSpace.swift in Sources */,
 				AB10686922115169001E8C63 /* Command.swift in Sources */,
 				AB10687422115169001E8C63 /* Components.swift in Sources */,

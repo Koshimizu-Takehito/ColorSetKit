@@ -10,19 +10,24 @@
 public struct ColorSets: Hashable {
 
     private let name: String
+
     private let colorSets: [ColorSet]
+
 }
 
 // MARK: - Instanciate
 public extension ColorSets {
 
     public init(name: String, paths: [String]) {
-        let colorSets = paths.compactMap(ColorSet.init)
-        self.init(name: name, colorSets: colorSets)
+        self.init(
+            name: name,
+            colorSets: paths.compactMap(ColorSet.init))
     }
 
-    public static func underCurrentDirectory() -> ColorSets {
-        return ColorSets(name: FileInfo.productName, paths: FileInfo.colorsetPaths)
+    public static func currentDir() -> ColorSets {
+        return ColorSets(
+            name: FileInfo.currentDir().outputName,
+            paths: ColorsetPaths.currentDir().colorsetPaths)
     }
 
 }
@@ -34,7 +39,7 @@ import AppKit
 @available(macOS, introduced:10.12)
 public extension ColorSets {
 
-    /// save the color list to user's ~/Library/Colors directory.
+    /// save the color list to user's \"~/Library/Colors\" directory.
     public func save() {
         try? nsColorList.write(to: nil)
     }
