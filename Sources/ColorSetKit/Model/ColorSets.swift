@@ -17,14 +17,14 @@ public struct ColorSets: Hashable {
 // MARK: - Instanciate
 public extension ColorSets {
 
-    public init(name: String, paths: [String]) {
-        self.init(
+    public init(name: String, paths: [String]) throws {
+        try self.init(
             name: name,
             colorSets: paths.compactMap(ColorSet.init))
     }
 
-    public static func currentDir() -> ColorSets {
-        return ColorSets(
+    public static func currentDir() throws -> ColorSets {
+        return try ColorSets(
             name: FileInfo.currentDir().outputName,
             paths: ColorsetPaths.currentDir().paths)
     }

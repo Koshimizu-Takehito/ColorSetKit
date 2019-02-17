@@ -6,6 +6,7 @@
 //
 
 import ShellKit
+import Foundation
 
 struct FileInfo {
 
@@ -48,13 +49,13 @@ extension FileInfo {
     private static func fileNameFirst(of paths: AnySequence<String>) -> String? {
         return paths
             .first { !$0.isEmpty }
-            .flatMap(fileName)
+            .map(fileName)
     }
 
-    private static func fileName(path: String) -> String? {
-        return path
-            .components(separatedBy: "/").last?
-            .components(separatedBy: ".").first
+    private static func fileName(path: String) -> String {
+        let url = URL(fileURLWithPath: path)
+        let nameWithExt = url.lastPathComponent as NSString
+        return nameWithExt.deletingPathExtension
     }
 
     private static var directoryName: String {
