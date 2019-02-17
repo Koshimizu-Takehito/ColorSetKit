@@ -15,7 +15,6 @@ struct ColorsetPaths {
 extension ColorsetPaths {
 
     static func currentDir() -> ColorsetPaths {
-        return ColorsetPaths(
-            colorsetPaths: Command.findColorSets.lines)
+        return ColorsetPaths(colorsetPaths: Array(Command.findColorSets.lines))
     }
 }
