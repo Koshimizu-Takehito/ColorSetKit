@@ -9,12 +9,12 @@ import ShellKit
 
 struct ColorsetPaths {
 
-    let colorsetPaths: [String]
+    let paths: [String]
 }
 
 extension ColorsetPaths {
 
     static func currentDir() -> ColorsetPaths {
-        return ColorsetPaths(colorsetPaths: Array(Command.findColorSets.lines))
+        return ColorsetPaths(paths: Array(Command.findColorSets.lines))
     }
 }
