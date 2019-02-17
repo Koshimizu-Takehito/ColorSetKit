@@ -78,7 +78,7 @@ private extension Components {
         switch string {
         case _ where string.hasPrefix("0x"):
             return hexToCGFloat(string)
-        case _ where string.hasPrefix("0.") || string.hasPrefix("1."):
+        case _ where string.contains("."):
             return Float(string).map(CGFloat.init)
         default:
             return Int(string).map(intToCGFloat)
