@@ -29,37 +29,35 @@ extension FileInfo {
     }
 }
 
-#if canImport(ShellKit)
-
 extension FileInfo {
 
     private static var outputName: String {
         return workspaceName
             ?? projectName
-            ?? directoryName!
+            ?? directoryName
     }
 
     private static var workspaceName: String? {
-        return Command.findWorkspace.lines
-            .first { !$0.isEmpty }?
-            .split(separator: "/").last?
-            .split(separator: ".").first
-            .map(String.init)
-
+        return fileNameFirst(of: Command.findWorkspace.lines)
     }
 
     private static var projectName: String? {
-        return Command.findProject.lines
-            .first { !$0.isEmpty }?
-            .split(separator: "/").last?
-            .split(separator: ".")
-            .first
-            .map(String.init)
+        return fileNameFirst(of: Command.findProject.lines)
     }
 
-    private static var directoryName: String? {
+    private static func fileNameFirst(of paths: AnySequence<String>) -> String? {
+        return paths
+            .first { !$0.isEmpty }
+            .flatMap(fileName)
+    }
+
+    private static func fileName(path: String) -> String? {
+        return path
+            .components(separatedBy: "/").last?
+            .components(separatedBy: ".").first
+    }
+
+    private static var directoryName: String {
         return Command.pwd.text
     }
 }
-
-#endif
