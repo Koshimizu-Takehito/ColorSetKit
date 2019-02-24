@@ -11,7 +11,7 @@ let package = Package(
             targets: ["ColorSetKit"]),
     ],
     dependencies: [
-        .package(url: "https://github.com/Koshimizu-Takehito/ShellKit.git", from: "0.1.0"),
+        .package(url: "https://github.com/Koshimizu-Takehito/ShellKit.git", from: "0.9.2"),
     ],
     targets: [
         .target(
