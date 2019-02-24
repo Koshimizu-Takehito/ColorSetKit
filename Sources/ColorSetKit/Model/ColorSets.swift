@@ -38,10 +38,10 @@ import AppKit
 public extension ColorSets {
 
     /// save the color list to user's \"~/Library/Colors\" directory.
-    public func write() {
+    public func write() throws {
         let list = NSColorList(name: name)
         Configurator.configure(list, with: colorSets)
-        try? list.write(to: nil)
+        try list.write(to: nil)
     }
 }
 
