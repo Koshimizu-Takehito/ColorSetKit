@@ -13,6 +13,7 @@ final class Configurator {
     private init() {}
 }
 
+@available(macOS, introduced:10.12)
 extension Configurator {
 
     static func configure(_ colorList: NSColorList, with colorSets: [ColorSet]) {
