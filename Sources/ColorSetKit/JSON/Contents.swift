@@ -12,7 +12,24 @@ struct Contents: Codable, Hashable {
     let attributes: [Attributes]
 
     enum CodingKeys: String, CodingKey {
+
         case info
+        
         case attributes = "colors"
+    }
+}
+
+extension Contents {
+
+    var isDarkModeSupported: Bool {
+        return attributes.contains {
+            $0.appearances.luminosity != .none
+        }
+    }
+
+    var isHighContrastSupported: Bool {
+        return attributes.contains {
+            $0.appearances.contrast != .none
+        }
     }
 }

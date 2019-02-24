@@ -9,7 +9,7 @@
 /* Begin PBXBuildFile section */
 		AB10686A22115169001E8C63 /* ExternalCommand.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB10685522115169001E8C63 /* ExternalCommand.swift */; };
 		AB10686B22115169001E8C63 /* ColorSet.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB10685722115169001E8C63 /* ColorSet.swift */; };
-		AB10686C22115169001E8C63 /* AppearanceValue.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB10685922115169001E8C63 /* AppearanceValue.swift */; };
+		AB10686C22115169001E8C63 /* Appearances.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB10685922115169001E8C63 /* Appearances.swift */; };
 		AB10686D22115169001E8C63 /* Idiom.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB10685A22115169001E8C63 /* Idiom.swift */; };
 		AB10686E22115169001E8C63 /* Info.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB10685B22115169001E8C63 /* Info.swift */; };
 		AB10686F22115169001E8C63 /* ColorSpace.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB10685C22115169001E8C63 /* ColorSpace.swift */; };
@@ -23,7 +23,12 @@
 		AB10687922115169001E8C63 /* ColorSets.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB10686822115169001E8C63 /* ColorSets.swift */; };
 		AB27122F2217CD0300AA10FD /* ColorsetPaths.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB27122E2217CD0300AA10FD /* ColorsetPaths.swift */; };
 		AB27124A2217D68E00AA10FD /* libShellKit.a in Frameworks */ = {isa = PBXBuildFile; fileRef = AB2712492217D68E00AA10FD /* libShellKit.a */; };
-		ABFE3E1722192C1400C1E676 /* Formatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABFE3E1622192C1400C1E676 /* Formatter.swift */; };
+		ABBCC59E22217B7A00BF0D24 /* AppearanceItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABBCC59D22217B7A00BF0D24 /* AppearanceItem.swift */; };
+		ABBCC5A022217B8D00BF0D24 /* Contrast.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABBCC59F22217B8D00BF0D24 /* Contrast.swift */; };
+		ABBCC5A222217BA300BF0D24 /* Luminosity.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABBCC5A122217BA300BF0D24 /* Luminosity.swift */; };
+		ABBCC5A5222229B400BF0D24 /* ColorNameFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABBCC5A4222229B400BF0D24 /* ColorNameFormatter.swift */; };
+		ABBCC5A7222229C600BF0D24 /* AttributesFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABBCC5A6222229C600BF0D24 /* AttributesFormatter.swift */; };
+		ABBCC5A9222229D500BF0D24 /* AppearancesFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABBCC5A8222229D500BF0D24 /* AppearancesFormatter.swift */; };
 		ABFE3E1922193F0A00C1E676 /* Configurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABFE3E1822193F0A00C1E676 /* Configurator.swift */; };
 /* End PBXBuildFile section */
 
@@ -42,7 +47,7 @@
 /* Begin PBXFileReference section */
 		AB10685522115169001E8C63 /* ExternalCommand.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExternalCommand.swift; sourceTree = "<group>"; };
 		AB10685722115169001E8C63 /* ColorSet.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ColorSet.swift; sourceTree = "<group>"; };
-		AB10685922115169001E8C63 /* AppearanceValue.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppearanceValue.swift; sourceTree = "<group>"; };
+		AB10685922115169001E8C63 /* Appearances.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Appearances.swift; sourceTree = "<group>"; };
 		AB10685A22115169001E8C63 /* Idiom.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Idiom.swift; sourceTree = "<group>"; };
 		AB10685B22115169001E8C63 /* Info.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Info.swift; sourceTree = "<group>"; };
 		AB10685C22115169001E8C63 /* ColorSpace.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ColorSpace.swift; sourceTree = "<group>"; };
@@ -57,7 +62,12 @@
 		AB27122E2217CD0300AA10FD /* ColorsetPaths.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorsetPaths.swift; sourceTree = "<group>"; };
 		AB2712492217D68E00AA10FD /* libShellKit.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; path = libShellKit.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		AB850919220EAEF500D54F13 /* libColorSetKit.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libColorSetKit.a; sourceTree = BUILT_PRODUCTS_DIR; };
-		ABFE3E1622192C1400C1E676 /* Formatter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Formatter.swift; sourceTree = "<group>"; };
+		ABBCC59D22217B7A00BF0D24 /* AppearanceItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppearanceItem.swift; sourceTree = "<group>"; };
+		ABBCC59F22217B8D00BF0D24 /* Contrast.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Contrast.swift; sourceTree = "<group>"; };
+		ABBCC5A122217BA300BF0D24 /* Luminosity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Luminosity.swift; sourceTree = "<group>"; };
+		ABBCC5A4222229B400BF0D24 /* ColorNameFormatter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorNameFormatter.swift; sourceTree = "<group>"; };
+		ABBCC5A6222229C600BF0D24 /* AttributesFormatter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AttributesFormatter.swift; sourceTree = "<group>"; };
+		ABBCC5A8222229D500BF0D24 /* AppearancesFormatter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppearancesFormatter.swift; sourceTree = "<group>"; };
 		ABFE3E1822193F0A00C1E676 /* Configurator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Configurator.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -85,6 +95,7 @@
 			isa = PBXGroup;
 			children = (
 				AB10685622115169001E8C63 /* Directory */,
+				ABBCC5A3222229A900BF0D24 /* Formatter */,
 				AB10685822115169001E8C63 /* JSON */,
 				AB10686622115169001E8C63 /* Model */,
 				AB10685322115169001E8C63 /* Shell */,
@@ -112,15 +123,18 @@
 		AB10685822115169001E8C63 /* JSON */ = {
 			isa = PBXGroup;
 			children = (
-				AB10685922115169001E8C63 /* AppearanceValue.swift */,
+				ABBCC59D22217B7A00BF0D24 /* AppearanceItem.swift */,
+				AB10685922115169001E8C63 /* Appearances.swift */,
+				AB10685D22115169001E8C63 /* Attributes.swift */,
 				AB10686222115169001E8C63 /* Color.swift */,
 				AB10685C22115169001E8C63 /* ColorSpace.swift */,
 				AB10686122115169001E8C63 /* Components.swift */,
 				AB10685E22115169001E8C63 /* Contents.swift */,
+				ABBCC59F22217B8D00BF0D24 /* Contrast.swift */,
 				AB10685F22115169001E8C63 /* DisplayGamut.swift */,
 				AB10685A22115169001E8C63 /* Idiom.swift */,
-				AB10685D22115169001E8C63 /* Attributes.swift */,
 				AB10685B22115169001E8C63 /* Info.swift */,
+				ABBCC5A122217BA300BF0D24 /* Luminosity.swift */,
 			);
 			path = JSON;
 			sourceTree = "<group>";
@@ -136,11 +150,10 @@
 		AB10686622115169001E8C63 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				AB10686822115169001E8C63 /* ColorSets.swift */,
 				AB27122E2217CD0300AA10FD /* ColorsetPaths.swift */,
-				AB10686722115169001E8C63 /* FileInfo.swift */,
-				ABFE3E1622192C1400C1E676 /* Formatter.swift */,
+				AB10686822115169001E8C63 /* ColorSets.swift */,
 				ABFE3E1822193F0A00C1E676 /* Configurator.swift */,
+				AB10686722115169001E8C63 /* FileInfo.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -168,6 +181,16 @@
 				AB850919220EAEF500D54F13 /* libColorSetKit.a */,
 			);
 			name = Products;
+			sourceTree = "<group>";
+		};
+		ABBCC5A3222229A900BF0D24 /* Formatter */ = {
+			isa = PBXGroup;
+			children = (
+				ABBCC5A8222229D500BF0D24 /* AppearancesFormatter.swift */,
+				ABBCC5A6222229C600BF0D24 /* AttributesFormatter.swift */,
+				ABBCC5A4222229B400BF0D24 /* ColorNameFormatter.swift */,
+			);
+			path = Formatter;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -226,22 +249,27 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				AB10686C22115169001E8C63 /* AppearanceValue.swift in Sources */,
-				ABFE3E1922193F0A00C1E676 /* Configurator.swift in Sources */,
+				ABBCC59E22217B7A00BF0D24 /* AppearanceItem.swift in Sources */,
+				AB10686C22115169001E8C63 /* Appearances.swift in Sources */,
+				ABBCC5A9222229D500BF0D24 /* AppearancesFormatter.swift in Sources */,
+				AB10687022115169001E8C63 /* Attributes.swift in Sources */,
+				ABBCC5A7222229C600BF0D24 /* AttributesFormatter.swift in Sources */,
 				AB10687522115169001E8C63 /* Color.swift in Sources */,
+				ABBCC5A5222229B400BF0D24 /* ColorNameFormatter.swift in Sources */,
 				AB10686B22115169001E8C63 /* ColorSet.swift in Sources */,
-				AB10687922115169001E8C63 /* ColorSets.swift in Sources */,
 				AB27122F2217CD0300AA10FD /* ColorsetPaths.swift in Sources */,
+				AB10687922115169001E8C63 /* ColorSets.swift in Sources */,
 				AB10686F22115169001E8C63 /* ColorSpace.swift in Sources */,
 				AB10687422115169001E8C63 /* Components.swift in Sources */,
+				ABFE3E1922193F0A00C1E676 /* Configurator.swift in Sources */,
 				AB10687122115169001E8C63 /* Contents.swift in Sources */,
+				ABBCC5A022217B8D00BF0D24 /* Contrast.swift in Sources */,
 				AB10687222115169001E8C63 /* DisplayGamut.swift in Sources */,
 				AB10686A22115169001E8C63 /* ExternalCommand.swift in Sources */,
 				AB10687822115169001E8C63 /* FileInfo.swift in Sources */,
-				ABFE3E1722192C1400C1E676 /* Formatter.swift in Sources */,
 				AB10686D22115169001E8C63 /* Idiom.swift in Sources */,
-				AB10687022115169001E8C63 /* Attributes.swift in Sources */,
 				AB10686E22115169001E8C63 /* Info.swift in Sources */,
+				ABBCC5A222217BA300BF0D24 /* Luminosity.swift in Sources */,
 				AB10687722115169001E8C63 /* Optional.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

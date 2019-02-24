@@ -7,21 +7,21 @@
 
 import Foundation
 
-enum AppearanceValue: Codable, Hashable {
+enum Appearance: Codable, Hashable {
 
     case contrast(Contrast)
     case luminosity(Luminosity)
 
     init(from decoder: Decoder) throws {
         let container = try decoder.container(keyedBy: CodingKeys.self)
-        let appearance = try container.decode(String.self, forKey: CodingKeys.appearance)
-        let value = try container.decode(String.self, forKey: CodingKeys.value)
+        let appearance = try container.decode(String.self, forKey: .appearance)
+        let value = try container.decode(String.self, forKey: .value)
 
-        switch try Appearance(tryRawValue: appearance) {
+        switch try Appearance(value: appearance) {
         case .contrast:
-            try self = .contrast(Contrast(tryRawValue: value))
+            try self = .contrast(Contrast(value: value))
         case .luminosity:
-            try self = .luminosity(Luminosity(tryRawValue: value))
+            try self = .luminosity(Luminosity(value: value))
         }
     }
 
@@ -34,6 +34,24 @@ enum AppearanceValue: Codable, Hashable {
     enum CodingKeys: String, Codable, Hashable, CodingKey {
         case appearance
         case value
+    }
+
+    static func luminosity(value: Appearance) -> Luminosity? {
+        switch value {
+        case .luminosity(let unpacked):
+            return unpacked
+        default:
+            return nil
+        }
+    }
+
+    static func contrast(value: Appearance) -> Contrast? {
+        switch value {
+        case .contrast(let unpacked):
+            return unpacked
+        default:
+            return nil
+        }
     }
 
     private var appearance: String {
@@ -55,46 +73,17 @@ enum AppearanceValue: Codable, Hashable {
     }
 }
 
-extension AppearanceValue {
+extension Appearance {
 
     enum Appearance: String, Codable, Hashable {
 
         case contrast
         case luminosity
 
-        init(tryRawValue value: String) throws {
+        init(value: String) throws {
             switch Appearance(rawValue: value) {
             case .none:
                 throw Error.appearance(value)
-            case .some(let value):
-                self = value
-            }
-        }
-    }
-
-    enum Contrast: String, Codable, Hashable {
-
-        case light
-
-        init(tryRawValue value: String) throws {
-            switch Contrast(rawValue: value) {
-            case .none:
-                throw Error.value(value)
-            case .some(let value):
-                self = value
-            }
-        }
-    }
-
-    enum Luminosity: String, Codable, Hashable {
-
-        case dark
-        case light
-
-        init(tryRawValue value: String) throws {
-            switch Luminosity(rawValue: value) {
-            case .none:
-                throw Error.value(value)
             case .some(let value):
                 self = value
             }
@@ -106,4 +95,33 @@ extension AppearanceValue {
         case value(String)
     }
 
+}
+
+enum Contrast: String, Codable, Hashable {
+
+    case high
+
+    init(value: String) throws {
+        switch Contrast(rawValue: value) {
+        case .none:
+            throw Appearance.Error.value(value)
+        case .some(let value):
+            self = value
+        }
+    }
+}
+
+enum Luminosity: String, Codable, Hashable {
+
+    case dark
+    case light
+
+    init(value: String) throws {
+        switch Luminosity(rawValue: value) {
+        case .none:
+            throw Appearance.Error.value(value)
+        case .some(let value):
+            self = value
+        }
+    }
 }
