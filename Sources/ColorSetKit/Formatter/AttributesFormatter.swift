@@ -18,12 +18,10 @@ final class AttributesFormatter {
     }
 
     func string(from attributes: Attributes) -> String {
-        let strings = [
-            attributes.idiom.description,
-            attributes.displayGamut?.description,
-            formatter.string(from: attributes.appearances)]
-        return strings
-            .compact()
-            .joined(separator: " | ")
+        var strings: [String] = []
+        strings += [attributes.displayGamut?.description].compact()
+        strings += formatter.string(from: attributes.appearances)
+        strings += [attributes.idiom.description]
+        return strings.joined(separator: "   ")
     }
 }

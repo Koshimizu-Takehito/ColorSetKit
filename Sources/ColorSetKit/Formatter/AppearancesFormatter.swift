@@ -20,7 +20,7 @@ final class AppearancesFormatter {
                   isHighContrastSupported: contents.isHighContrastSupported)
     }
 
-    func string(from appearances: Appearances) -> String {
+    func string(from appearances: Appearances) -> [String] {
         switch (appearances.luminosity, appearances.contrast) {
         case (let luminosity?, let contrast?):
             return string(from: (luminosity, contrast))
@@ -33,47 +33,47 @@ final class AppearancesFormatter {
         }
     }
 
-    private func string(from pair: (Luminosity, Contrast)) -> String {
+    private func string(from pair: (Luminosity, Contrast)) -> [String] {
         switch pair {
         case (.dark, .high):
-            return "Dark Appearance | High Contrast"
+            return ["Dark Appearance\t", "High Contrast\t\t\t\t"]
         case (.light, .high):
-            return "Light Appearance | High Contrast"
+            return ["Light Appearance\t", "High Contrast\t\t\t\t"]
         }
     }
 
-    private func string(from luminosity: Luminosity) -> String {
+    private func string(from luminosity: Luminosity) -> [String] {
         switch (luminosity, isHighContrastSupported) {
         case (.dark, true):
-            return "Dark Appearance | Normal Contrast"
+            return ["Dark Appearance\t", "Normal Contrast\t"]
         case (.light, true):
-            return "Light Appearance | Normal Contrast"
+            return ["Light Appearance\t", "Normal Contrast\t"]
         case (.dark, false):
-            return "Dark Appearance"
+            return ["Dark Appearance\t"]
         case (.light, false):
-            return "Light Appearance"
+            return ["Light Appearance\t"]
         }
     }
 
-    private func string(from contrast:Contrast) -> String {
+    private func string(from contrast:Contrast) -> [String] {
         switch (isDarkModeSupported, contrast) {
         case (true, .high):
-            return "Any Luminosity | High Contrast"
+            return ["Any Luminosity\t\t", "High Contrast\t\t\t\t"]
         case (false, .high):
-            return "High Contrast"
+            return ["High Contrast\t\t\t\t"]
         }
     }
 
-    private func string() -> String {
+    private func string() -> [String] {
         switch (isDarkModeSupported, isHighContrastSupported) {
         case (true, true):
-            return "Any Luminosity | Normal Contrast"
+            return ["Any Luminosity\t\t", "Normal Contrast\t"]
         case (true, false):
-            return "Any Appearance"
+            return ["Any Appearance\t\t"]
         case (false, true):
-            return "Normal Contrast"
+            return ["Normal Contrast\t"]
         case (false, false):
-            return ""
+            return []
         }
     }
 }

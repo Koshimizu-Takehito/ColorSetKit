@@ -20,7 +20,6 @@ final class ColorNameFormatter {
     }
 
     func string(from attributes: Attributes) -> String {
-        return "\(colorSetName) ( \(formatter.string(from: attributes)) )"
+        return "\(colorSetName)  \t\(formatter.string(from: attributes))"
     }
 }
-

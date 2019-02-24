@@ -5,31 +5,39 @@
 //  Created by Takehito Koshimizu on 2019/02/09.
 //
 
-struct Appearances: Codable, Hashable {
+struct Appearances: Hashable {
 
     let luminosity: Luminosity?
 
     let contrast: Contrast?
 
-    init(from decoder: Decoder) throws {
-        var luminosity = Luminosity?.none
-        var contrast = Contrast?.none
-        var container = try decoder.unkeyedContainer()
-        while container.isAtEnd {
-            switch try container.decode(AppearanceItem.self) {
+    init(luminosity: Luminosity?, contrast: Contrast?) {
+        self.luminosity = luminosity
+        self.contrast = contrast
+    }
+
+    init(items: [AppearanceItem]) {
+        var luminosity: Luminosity? = nil
+        var contrast: Contrast? = nil
+        for item in items {
+            switch item {
             case .luminosity(let value):
                 luminosity = value
             case .contrast(let value):
                 contrast = value
             }
         }
-        self.luminosity = luminosity
-        self.contrast = contrast
+        self.init(luminosity: luminosity, contrast: contrast)
     }
 
-    func encode(to encoder: Encoder) throws {
-        var container = encoder.unkeyedContainer()
-        try luminosity.map(AppearanceItem.luminosity).map { try container.encode($0) }
-        try contrast.map(AppearanceItem.contrast).map { try container.encode($0) }
+    var items: [AppearanceItem]? {
+        var items = [AppearanceItem?]()
+        items.append(luminosity.map(AppearanceItem.luminosity))
+        items.append(contrast.map(AppearanceItem.contrast))
+        return items.compact().wrapOptional()
+    }
+
+    static func null() -> Appearances {
+        return  Appearances(luminosity: nil, contrast: nil)
     }
 }

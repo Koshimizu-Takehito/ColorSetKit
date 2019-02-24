@@ -36,6 +36,17 @@ extension Optional where Wrapped: Sequence {
     }
 }
 
+extension Sequence {
+
+    func wrapOptional() -> Self? {
+        if underestimatedCount == 0 {
+            return nil
+        } else {
+            return self
+        }
+    }
+}
+
 extension Sequence where Element: OptionalProtocol {
 
     @inlinable

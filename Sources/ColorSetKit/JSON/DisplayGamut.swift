@@ -21,8 +21,8 @@ extension DisplayGamut: CustomStringConvertible {
 
     private enum Description: String, CaseIterable {
 
-        case displayP3 = "Display P3"
+        case displayP3 = "Display P3\t"
 
-        case sRGB = "sRGB"
+        case sRGB = "sRGB\t\t"
     }
 }
